@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let n = parseInt(prompt("Mời bạn nhập số nguyên: "));
+        let numFibonacci = 0;
+        let rs = "";
+        for (let i = 1; i < 100; i++) {
+           
+           numFibonacci =  printFibonacci(i);
+           if(numFibonacci < n)
+           {
+                rs += numFibonacci + " ";
+           }
+        }
+        document.write(rs);
+
+
+        function printFibonacci(num) {
+           
+            let  f0 = 0;
+            let f1 = 1;
+            let fn = 1;
+            let  i;
+            if (num < 0) {
+                return -1;
+            } else if (num == 0 || num == 1) {
+                return num;
+            } else {
+                for (i = 2; i < num; i++) {
+                    f0 = f1;
+                    f1 = fn;
+                    fn = f0 + f1;
+                }
+            }
+            return fn;
+        }
+
+       
+    </script>
+</body>
+
+</html>

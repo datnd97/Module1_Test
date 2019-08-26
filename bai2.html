@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array1= [12,6,3,7,21,5,7];
+        let index1 =12;
+        let array2 = [12,6,3,4,21,5,7];
+        let index2 = 7;
+
+        let isIndex1 = checkFromArray(array1,index2);
+        if(isIndex1)
+        {   
+             console.log("Phan tu nay co trong mang.");
+             let position  =  getPositionArray(array1,index1);
+             let newArray  = deleteIndexArray(array1,position);
+             console.log(newArray);
+        }
+        else
+        {
+            console.log("Khong tim thay gia tri nao .");
+        }
+        function checkFromArray(array,index)
+        {   
+            let rs = false;
+            for(let i = 0 ; i < array.length;i++)
+            {
+                if(index == array[i])
+                {   
+                    return true;
+                }
+            }
+            return rs;
+        }
+        function deleteIndexArray(array,position)
+        {  
+            let rsArray = [];
+            for(let i = position;i < array.length-1;i++)
+            {
+              rsArray[i] = array[i+1];
+            }
+            return rsArray;
+        }
+        function getPositionArray(array,index)
+        {      
+            let position = 0;
+            for(let i = 0; i < array.length ;i++)
+            {
+                if(array[i] == index)
+                {   
+                    position = i;
+                }
+            }
+            return position;
+        }
+    </script>
+</body>
+</html>

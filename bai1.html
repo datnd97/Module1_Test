@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+    let array1 = [10,5,2,8,-1,6,8];
+    let array2 = [2,4,0,5,1];
+    let array3 = [-8,-8,-2,-6,-1,-1,-4];
+
+    function findMaxScore(arr)
+    {   
+        let phanTuDauTien = arr[0];
+        let max = phanTuDauTien;
+        for(let i  = 1 ; i < arr.length ;i++)
+        {   
+            dieuKienLonHon = max < arr[i]; 
+            if(dieuKienLonHon)
+            {
+                max = arr[i];
+            }
+          
+        }
+        return max;
+    }
+    console.log(findMaxScore(array1));
+    console.log(findMaxScore(array2));
+    console.log(findMaxScore(array3));
+    
+    </script>
+</body>
+</html>
